@@ -1,0 +1,59 @@
+/* General body styling */
+body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+}
+
+/* Container to hold blocks */
+.container {
+    display: flex;
+    flex-direction: column; /* Default to vertical */
+    width: 100%;
+    max-width: 600px; /* Adjust based on your preference */
+    gap: 15%; /* Default gap, dynamically adjustable */
+}
+
+/* Styling for color blocks */
+.color-block {
+    flex-grow: 1;
+    aspect-ratio: 1 / 1; /* Ensures the block is always square */
+    position: relative;
+}
+
+/* Media query for horizontal alignment on non-mobile devices */
+@media (min-width: 600px) {
+    .container {
+        flex-direction: row;
+    }
+}
+
+/* Image styling - dynamically adjustable */
+img {
+    width: 50%; /* Default size, dynamically adjustable */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Text box styling */
+input[type="text"], input[type="number"] {
+    padding: 10px;
+    font-size: 16px;
+    width: 300px; /* Width of the blocks */
+    text-align: center;
+}
+
+/* Control section styling */
+.controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px; /* Spacing between inputs and buttons */
+    margin-top: 30px; /* Added vertical space above the controls */
+}

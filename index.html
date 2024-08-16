@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Blocks</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="color-block" id="block1"></div>
+        <div class="color-block" id="block2"></div>
+    </div>
+    <div class="controls">
+        <input type="text" id="color1">
+        <button id="randomize1">Randomize Block 1</button>
+        <input type="text" id="color2">
+        <button id="randomize2">Randomize Block 2</button>
+    </div>
+    <div class="controls">
+        <button id="randomizeAll">Randomize All</button>
+    </div>
+    <label for="imageSize"><br><br>Image Size (%):</label>
+    <input type="number" id="imageSize" min="1" max="100" step="1" value="50">
+    <button id="resetImageSize">Reset Image Size</button>
+    <label for="gap"><br><br>Gap (%):</label>
+    <input type="number" id="gap" min="0" max="50" step="0.5" value="15">
+    <button id="resetGap">Reset Gap</button>
+    <script src="script.js"></script>
+</body>
+</html>
