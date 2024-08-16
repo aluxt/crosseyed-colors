@@ -18,7 +18,7 @@ body {
     flex-direction: column; /* Default to vertical */
     width: 100%;
     max-width: 600px; /* Adjust based on your preference */
-    gap: 10%; /* Adjust gap percentage for visibility */
+    gap: 10vh; /* Set gap as a percentage of viewport height for consistency */
 }
 
 /* Styling for color blocks */
@@ -33,6 +33,7 @@ body {
 @media (min-width: 600px) {
     .container {
         flex-direction: row;
+        gap: 5vw; /* Set gap as a percentage of viewport width for desktop */
     }
 
     .color-block {
