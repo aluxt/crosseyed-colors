@@ -1,12 +1,15 @@
 /* General body styling */
 body {
     margin: 0;
+    padding: 10px; /* Adding padding to prevent cut-offs */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    min-height: 100vh; /* Use min-height instead of height for flexibility */
     background-color: #f4f4f4;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    overflow-y: auto; /* Enable vertical scrolling if needed */
 }
 
 /* Container to hold blocks */
@@ -15,15 +18,15 @@ body {
     flex-direction: column; /* Default to vertical */
     width: 100%;
     max-width: 600px; /* Adjust based on your preference */
-    gap: 15%; /* Default gap, dynamically adjustable */
+    gap: 10%; /* Adjust gap percentage for visibility */
 }
 
 /* Styling for color blocks */
 .color-block {
-    flex-grow: 1;
+    width: 90%; /* Reduce width to fit within padding */
     aspect-ratio: 1 / 1; /* Ensures the block is always square */
     position: relative;
-    max-height: 50vh; /* Limit height to half of the viewport on mobile */
+    max-height: 40vh; /* Adjust height based on viewport */
 }
 
 /* Media query for horizontal alignment on non-mobile devices */
@@ -33,7 +36,11 @@ body {
     }
 
     .color-block {
-        max-height: none; /* Remove max height restriction */
+        max-height: none; /* Remove max height restriction for desktop */
+    }
+
+    body {
+        padding: 0; /* Remove body padding on desktop */
     }
 }
 
@@ -50,27 +57,23 @@ img {
 input[type="text"], input[type="number"] {
     padding: 10px;
     font-size: 16px;
-    width: 300px; /* Width of the blocks */
+    width: 80%; /* Adjusted width for better mobile fit */
     text-align: center;
 }
 
 /* Control section styling */
 .controls {
     display: flex;
+    flex-direction: column; /* Always vertical, even on desktop */
     align-items: center;
     justify-content: center;
-    gap: 10px; /* Spacing between inputs and buttons */
-    margin-top: 30px; /* Added vertical space above the controls */
+    gap: 10px;
+    margin-top: 20px; /* Adjusted for better spacing */
 }
 
-/* Media query for stacking controls vertically on mobile */
+/* Ensures that controls fit better on mobile */
 @media (max-width: 599px) {
-    .controls {
-        flex-direction: column;
-        gap: 10px;
-    }
-
     input[type="text"], input[type="number"] {
-        width: 80%; /* Adjust width to better fit mobile screens */
+        width: 100%; /* Full width on mobile */
     }
 }
