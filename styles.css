@@ -23,12 +23,17 @@ body {
     flex-grow: 1;
     aspect-ratio: 1 / 1; /* Ensures the block is always square */
     position: relative;
+    max-height: 50vh; /* Limit height to half of the viewport on mobile */
 }
 
 /* Media query for horizontal alignment on non-mobile devices */
 @media (min-width: 600px) {
     .container {
         flex-direction: row;
+    }
+
+    .color-block {
+        max-height: none; /* Remove max height restriction */
     }
 }
 
@@ -56,4 +61,16 @@ input[type="text"], input[type="number"] {
     justify-content: center;
     gap: 10px; /* Spacing between inputs and buttons */
     margin-top: 30px; /* Added vertical space above the controls */
+}
+
+/* Media query for stacking controls vertically on mobile */
+@media (max-width: 599px) {
+    .controls {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    input[type="text"], input[type="number"] {
+        width: 80%; /* Adjust width to better fit mobile screens */
+    }
 }
